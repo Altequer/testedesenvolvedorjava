@@ -1,6 +1,6 @@
 Sobre a aplicação:
    - Nesta aplicação se tem um CRUD de cidade. Onde é possível se obter a previsão do tempo.
-   - Para acessar a API basta colocar "localhost:8100/city". Obs: A porta é possíve configurar em "src/main/resources/application.properties".
+   - Para acessar a API basta colocar "localhost:8100/city". Obs: A porta é possível configurar em "src/main/resources/application.properties".
    - Utilizado no Front-end o Single Page.
 
 Utilizado no back-end:
