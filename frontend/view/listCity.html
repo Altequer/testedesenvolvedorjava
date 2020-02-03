@@ -1,0 +1,74 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="titlePage">CIDADES</h3>
+        <a href="#!/newCity" class="btn btn-default btn-primary btnAdd">
+            +
+        </a>
+    </div>
+    <div class="body">
+
+        <loading ng-show="loading"></loading>
+
+        <alert-error ng-show="error">
+            {{error}}
+        </alert-error>
+
+        <div ng-show="listCitys.length == 0">
+            <center>
+                <h4>Nenhuma cidade cadastrada</h4>
+            </center>
+        </div>
+
+        <div ng-show="listCitys.length > 0">
+            <input class="form-control" type="text" ng-model="search" placeholder="O que deseja buscar?" />
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            <a href="" ng-click="order('name')">Nome</a>
+                        </th>
+                        <th scope="col">
+                            <a href="" ng-click="order('county')">País</a></th>
+                        <th scope="col">
+                            <a href="" ng-click="order('latitude')">Latitude</a>
+                        </th>
+                        <th scope="col">
+                            <a href="" ng-click="order('longitude')">Longitude</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="city in listCitys | filter:{name: search} | orderBy:orderingField:changeOrder">
+                        <td>{{city.name}}</td>
+                        <td>{{city.country}}</td>
+                        <td>{{city.latitude}}</td>
+                        <td>{{city.longitude}}</td>
+                        <td class="btnForecastDetails">
+                            <a href="" ng-click="detailForescast(city.id)">Detalhes da previsão</a>
+                        </td>
+                        <td>
+                            <div class="dropdown dropleft">
+                                <button type="submit" class="btn btn-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#!/editCity/{{city.id}}">
+                                        <i class="fas fa-edit"></i> Editar
+                                    </a>
+                                    <a class="dropdown-item" href="" ng-click="delete(city.id)">
+                                        <i class="far fa-trash-alt"></i> Excluir
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <message title="{{title}}">
+            {{message}}
+        </message>
+    </div>
+</div>

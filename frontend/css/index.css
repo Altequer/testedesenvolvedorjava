@@ -1,0 +1,19 @@
+.btnAdd {
+    float: right;
+}
+
+.titlePage {
+    float: left;
+}
+
+.btnForecastDetails {
+    width: 180px !important;
+}
+
+.body {
+    padding: 10px 10px 10px 10px;
+}
+
+a {
+    color: black;
+}

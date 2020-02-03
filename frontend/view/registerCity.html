@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="titlePage">CADASTRO DE CIDADE</h3>
+    </div>
+
+    <loading ng-show="loading"></loading>
+    <alert-error ng-show="error">
+        {{error}}
+    </alert-error>
+
+    <form class="body" name="formCity">
+        <div class="form-group">
+            <label>Nome da cidade</label>
+            <input type="text" class="form-control" placeholder="Digite nome da cidade" ng-model="city.name" ng-required="true" />
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="formCity.$invalid" ng-click="action()">Salvar</button>
+    </form>
+</div>
